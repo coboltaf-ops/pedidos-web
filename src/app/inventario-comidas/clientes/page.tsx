@@ -108,6 +108,9 @@ export default function ClientesComidasPage() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
           <h1 style={{ fontSize: '32px', fontWeight: 'bold' }}>👥 CLIENTES</h1>
+        </div>
+
+        <div style={{ display: 'flex', gap: '12px', marginBottom: '30px' }}>
           <button
             onClick={handleOpenForm}
             style={{
@@ -118,9 +121,25 @@ export default function ClientesComidasPage() {
               borderRadius: '8px',
               cursor: 'pointer',
               fontWeight: 'bold',
+              fontSize: '14px',
             }}
           >
-            + NUEVO CLIENTE
+            ➕ Registro de Cliente
+          </button>
+          <button
+            onClick={() => alert('Reportes en desarrollo')}
+            style={{
+              padding: '12px 24px',
+              background: '#3b82f6',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              fontSize: '14px',
+            }}
+          >
+            📊 Reportes
           </button>
         </div>
 
@@ -169,69 +188,54 @@ export default function ClientesComidasPage() {
                         {cliente.situacion}
                       </span>
                     </td>
-                    <td style={{ padding: '10px' }}>
+                    <td style={{ padding: '10px', display: 'flex', gap: '8px' }}>
                       <button
                         onClick={() => handleViewDetails(cliente)}
-                        title="Ver detalles"
+                        title="Ver"
                         style={{
-                          padding: '4px 6px',
+                          padding: '6px 12px',
                           background: '#10b981',
                           color: '#fff',
                           border: 'none',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px',
-                          marginRight: '3px',
+                          fontSize: '12px',
+                          fontWeight: 'bold',
                         }}
                       >
-                        👁️
+                        Ver
                       </button>
                       <button
                         onClick={() => handleEditOpen(cliente)}
                         title="Editar"
                         style={{
-                          padding: '4px 6px',
+                          padding: '6px 12px',
                           background: '#3b82f6',
                           color: '#fff',
                           border: 'none',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px',
-                          marginRight: '3px',
+                          fontSize: '12px',
+                          fontWeight: 'bold',
                         }}
                       >
-                        ✎
+                        Editar
                       </button>
                       <button
                         onClick={() => handleDelete(cliente.id)}
                         title="Eliminar"
                         style={{
-                          padding: '4px 6px',
+                          padding: '6px 12px',
                           background: '#ef4444',
                           color: '#fff',
                           border: 'none',
                           borderRadius: '4px',
                           cursor: 'pointer',
-                          fontSize: '11px',
-                          marginRight: '3px',
+                          fontSize: '12px',
+                          fontWeight: 'bold',
                         }}
                       >
-                        ✕
-                      </button>
-                      <button
-                        onClick={() => handleExportPDF(cliente)}
-                        title="Exportar PDF"
-                        style={{
-                          padding: '4px 6px',
-                          background: '#ea580c',
-                          color: '#fff',
-                          border: 'none',
-                          borderRadius: '4px',
-                          cursor: 'pointer',
-                          fontSize: '11px',
-                        }}
-                      >
-                        📄
+                        Eliminar
                       </button>
                     </td>
                   </tr>
