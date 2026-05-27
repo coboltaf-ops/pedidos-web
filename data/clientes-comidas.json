@@ -1,27 +1,25 @@
 [
   {
-    "id": "validate-1779923592129944000",
-    "nro_correlativo": 1,
-    "fecha_creacion": "2026-05-27T23:13:12.000Z",
+    "id": "local-final",
+    "nombre": "LOCAL FINAL",
+    "nro_documento": "777",
+    "nro_movil": "777",
+    "correo": "local@test.com",
     "tipo_cliente": "Persona Natural",
-    "nombre": "TEST VALIDACIÓN",
     "tipo_identificacion": "CC",
-    "nro_documento": "1234567890",
-    "correo": "validacion@test.com",
-    "nro_movil": "3001234567",
-    "ciudad": "Test",
-    "situacion": "Activo"
+    "situacion": "Activo",
+    "nro_correlativo": 2
   },
   {
-    "id": "50208f69-35e4-421f-8082-b2c9889e427e",
-    "nro_correlativo": 2,
-    "fecha_creacion": "2026-05-27T23:22:29.971Z",
+    "id": "df1871eb-b54e-4d63-960c-c550ddecee88",
+    "nro_correlativo": 3,
+    "fecha_creacion": "2026-05-27T23:29:11.799Z",
     "situacion": "Activo",
     "tipo_cliente": "Persona Natural",
     "tipo_identificacion": "CC",
-    "nombre": "TEST_1779924149385",
-    "nro_documento": "9924149385",
-    "correo": "test1779924149385@test.com",
+    "nombre": "FINAL_TEST_1779924550639",
+    "nro_documento": "9924550639",
+    "correo": "final1779924550639@test.com",
     "nro_movil": "3001234567"
   }
 ]
