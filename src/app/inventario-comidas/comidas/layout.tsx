@@ -17,7 +17,7 @@ function ComidasDataLoader() {
 
 export default function ComidasLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isStandalone = pathname === '/comidas/landing' || pathname === '/comidas/qr'
+  const isStandalone = pathname === '/inventario-comidas/comidas/landing' || pathname === '/inventario-comidas/comidas/qr'
 
   if (isStandalone) {
     return (

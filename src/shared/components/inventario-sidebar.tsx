@@ -86,7 +86,7 @@ const MenuItemLink = ({ name, href, icon, external }: { name: string; href: stri
 export function InventarioSidebar() {
   const pathname = usePathname()
   const [comidasOpen, setComidasOpen] = useState(pathname.startsWith('/inventario-comidas'))
-  const [portalOpen, setPortalOpen] = useState(pathname.startsWith('/comidas'))
+  const [portalOpen, setPortalOpen] = useState(pathname.startsWith('/inventario-comidas/comidas'))
 
   return (
     <div
@@ -132,8 +132,8 @@ export function InventarioSidebar() {
 
       <CollapseSection label="🍕 PORTAL COMIDAS" color="#ea580c" open={portalOpen} onToggle={() => setPortalOpen(!portalOpen)}>
         <div style={{ borderLeft: '3px solid #ea580c', paddingLeft: '12px', marginLeft: '-4px' }}>
-          <MenuItemLink name="Landing" href="/comidas/landing" icon="🔗" external />
-          <MenuItemLink name="QR Pedidos" href="/comidas/qr" icon="📱" external />
+          <MenuItemLink name="Landing" href="/inventario-comidas/comidas/landing" icon="🔗" external />
+          <MenuItemLink name="QR Pedidos" href="/inventario-comidas/comidas/qr" icon="📱" external />
         </div>
       </CollapseSection>
     </div>

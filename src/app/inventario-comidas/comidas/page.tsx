@@ -11,7 +11,7 @@ export default function ComidasHome() {
       <p style={{ fontSize: '18px', marginBottom: '60px', color: '#aaa' }}>Gestión de Pedidos y Comidas</p>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', maxWidth: '600px', width: '100%' }}>
-        <button onClick={() => router.push('/comidas/landing')} style={{
+        <button onClick={() => router.push('/inventario-comidas/comidas/landing')} style={{
           padding: '40px 20px',
           fontSize: '16px',
           fontWeight: 'bold',
@@ -25,7 +25,7 @@ export default function ComidasHome() {
           🌐 Landing<br/>(Público)
         </button>
 
-        <button onClick={() => router.push('/comidas/qr')} style={{
+        <button onClick={() => router.push('/inventario-comidas/comidas/qr')} style={{
           padding: '40px 20px',
           fontSize: '16px',
           fontWeight: 'bold',
@@ -39,7 +39,7 @@ export default function ComidasHome() {
           📱 QR Mesa<br/>(Interno)
         </button>
 
-        <button onClick={() => router.push('/comidas/cocina')} style={{
+        <button onClick={() => router.push('/inventario-comidas/comidas/cocina')} style={{
           padding: '40px 20px',
           fontSize: '16px',
           fontWeight: 'bold',
@@ -53,7 +53,7 @@ export default function ComidasHome() {
           👨‍🍳 Cocina<br/>(TV Pedidos)
         </button>
 
-        <button onClick={() => router.push('/comidas/caja')} style={{
+        <button onClick={() => router.push('/inventario-comidas/comidas/caja')} style={{
           padding: '40px 20px',
           fontSize: '16px',
           fontWeight: 'bold',
