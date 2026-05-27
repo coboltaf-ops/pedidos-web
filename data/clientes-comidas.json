@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "test-001",
+    "nro_correlativo": 1,
+    "fecha_creacion": "2026-05-27T00:00:00.000Z",
+    "tipo_cliente": "Persona Natural",
+    "nombre": "Juan Pérez",
+    "tipo_identificacion": "CC",
+    "nro_documento": "1234567890",
+    "correo": "juan@example.com",
+    "nro_movil": "3001234567",
+    "direccion": "Calle 10 #20-30",
+    "ciudad": "Bogotá",
+    "poblacion": "Bogotá",
+    "pais": "Colombia",
+    "situacion": "Activo"
+  }
+]
