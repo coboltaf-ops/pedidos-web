@@ -39,9 +39,13 @@ function InventarioComidasLayoutContent({ children }: { children: React.ReactNod
 
   // Ocultar sidebar automáticamente cuando navegas a un módulo específico
   useEffect(() => {
-    const isModulePage = pathname && pathname.match(/\/inventario-comidas\/(clientes|proveedores|productos|formulas|ordenes-compra|recepcion|bodegas|salidas|ajustes|inventario-fisico|datos-empresa|usuarios)$/)
+    console.log('Pathname:', pathname)
+    const modulosRutas = ['clientes', 'proveedores', 'productos', 'formulas', 'ordenes-compra', 'recepcion', 'bodegas', 'salidas', 'ajustes', 'inventario-fisico', 'datos-empresa', 'usuarios']
+    const isModulePage = modulosRutas.some(modulo => pathname.includes(`/inventario-comidas/${modulo}`))
+    console.log('Es módulo:', isModulePage)
     if (isModulePage) {
       setSidebarVisible(false)
+      console.log('Ocultando sidebar')
     }
   }, [pathname])
 
