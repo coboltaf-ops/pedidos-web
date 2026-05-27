@@ -14,16 +14,29 @@ function filePath(collection: string) {
 
 function atomicWrite(fp: string, content: string): void {
   try {
+    // Crear directorio si no existe
+    const dir = path.dirname(fp)
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true })
+    }
+
     // Intenta usar rename atómico (funciona en sistemas de archivos normales)
     const tmpPath = path.join(os.tmpdir(), `${path.basename(fp)}.${Date.now()}.tmp`)
     fs.writeFileSync(tmpPath, content, 'utf-8')
     fs.renameSync(tmpPath, fp)
   } catch (err) {
-    // Si falla (ej: EXDEV en serverless), escribe directamente
-    if ((err as any)?.code === 'EXDEV') {
+    // Si falla (ej: EXDEV en serverless), escribe directamente sin rename
+    try {
+      const dir = path.dirname(fp)
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true })
+      }
       fs.writeFileSync(fp, content, 'utf-8')
-    } else {
-      throw err
+    } catch (writeErr) {
+      // En Vercel sin Blob Storage, la escritura a /data/ no persiste
+      // pero el cliente tiene los datos en localStorage
+      console.warn('[DB] No se pudo escribir archivo (posible Vercel sin Blob):', writeErr)
+      throw writeErr
     }
   }
 }
