@@ -73,3 +73,7 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Build logs y temporales
+build-logs/
+.husky/_/

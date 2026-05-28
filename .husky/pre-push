@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔨 Pre-push: Compilando proyecto..."
+npm run build > /tmp/build.log 2>&1
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed! Fix errors before pushing."
+  echo ""
+  echo "Build log:"
+  tail -50 /tmp/build.log
+  exit 1
+fi
+
+echo "✓ Build validation passed"
+echo "✓ Ready to push!"
