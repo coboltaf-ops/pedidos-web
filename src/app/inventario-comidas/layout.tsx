@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { LOGO_BASE64 } from '@/shared/lib/logo-base64'
+import { useEmpresaStore } from '@/features/datos-empresa/store/empresa-store'
 import { InventarioSidebar } from '@/shared/components/inventario-sidebar'
 import { SidebarProvider } from '@/shared/context/sidebar-context'
 import { usePollingProductosComidas } from '@/features/inventario-comidas/hooks/use-polling-productos-comidas'
@@ -35,6 +35,8 @@ function InventarioComidasDataLoader() {
 }
 
 function InventarioComidasLayoutContent({ children }: { children: React.ReactNode }) {
+  const empresaActiva = useEmpresaStore(s => s.empresas[0])
+  const logoEmpresa = empresaActiva?.logo
   const [sidebarVisible, setSidebarVisible] = useState(false)
   const pathname = usePathname()
 
@@ -57,7 +59,7 @@ function InventarioComidasLayoutContent({ children }: { children: React.ReactNod
       <main style={{ flex: 1, marginLeft: sidebarVisible ? '256px' : '0', overflowY: 'auto', transition: 'margin-left 0.3s' }}>
         {!sidebarVisible && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', position: 'fixed', top: '20px', left: '20px', zIndex: 50 }}>
-            <img src={LOGO_BASE64} alt="SPIN" style={{ width: '48px', height: '48px' }} />
+            <img src={logoEmpresa || ''} alt="SPIN" style={{ width: '48px', height: '48px' }} />
             <button
               onClick={() => setSidebarVisible(true)}
               style={{
