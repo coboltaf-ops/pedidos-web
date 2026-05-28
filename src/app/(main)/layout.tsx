@@ -54,10 +54,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   }
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && !localStorage.getItem('data-reset-v3')) {
-      localStorage.removeItem('productos-storage')
-      localStorage.setItem('data-reset-v3', '1')
-      window.location.reload()
+    // Skip localStorage cleanup to preserve user data
+    if (typeof window !== 'undefined' && !localStorage.getItem('data-initialized')) {
+      localStorage.setItem('data-initialized', '1')
     }
   }, [])
 

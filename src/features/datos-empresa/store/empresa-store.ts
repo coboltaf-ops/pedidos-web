@@ -25,7 +25,7 @@ interface EmpresaState {
 
 export const useEmpresaStore = create<EmpresaState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       empresas: [
         {
           id: '1',
@@ -60,6 +60,10 @@ export const useEmpresaStore = create<EmpresaState>()(
     {
       name: 'empresa-storage',
       version: 1,
+      // Solo hidrata si hay datos válidos en storage
+      partialize: (state) => ({
+        empresas: state.empresas.filter(e => e.nombre && e.nombre.trim().length > 0),
+      }),
     }
   )
 )
